@@ -1,0 +1,39 @@
+.body{
+    background-color: #e3f2fd;
+}
+
+.banner{
+    height: 400px;
+}
+
+.bordediv{
+    border: #2979ff solid 2px; 
+}
+
+.margenbuscar{
+    margin-top: 40px;
+}
+
+.fwefwg{
+    margin: 15px;
+}
+
+.titulolistamensual{
+
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.fotos{
+    width: 100px;
+    height: 100px;
+}
+
+.margeningreso{
+    justify-content: center;
+}
+
+.titulos{
+
+    text-decoration: solid;
+}
