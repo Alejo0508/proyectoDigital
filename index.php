@@ -51,13 +51,13 @@
                         <a href="listamensualidad.php" class="btn btn-info mb-2" active" role="button"
                             aria-pressed="true">Listado de mensualidad</a>
 
-                            <a href="listadoregulares.php" class="btn btn-info mb-2" active" role="button"
+                        <a href="listadoregulares.php" class="btn btn-info mb-2" active" role="button"
                             aria-pressed="true">Listado regulares</a>
 
-                            <a href="listadisponibilidad.php" class="btn btn-info mb-2" active" role="button"
+                        <a href="listadisponibilidad.php" class="btn btn-info mb-2" active" role="button"
                             aria-pressed="true">Lista por disponibilidad</a>
 
-                            <a href="historicodepagos.php" class="btn btn-info mb-2" active" role="button"
+                        <a href="historicodepagos.php" class="btn btn-info mb-2" active" role="button"
                             aria-pressed="true">Historico de pagos</a>
                     </div>
                 </div>
@@ -67,19 +67,19 @@
 
             <?php
 
-    include ("conexionBD.php");
+                include ("conexionBD.php");
 
-    $transaccion = new conexionBD();
+                $transaccion = new conexionBD();
 
-    $consultasql = "SELECT * FROM mensualidad WHERE 1";
+                $consultasql = "SELECT * FROM mensualidad WHERE 1";
 
-    $mensualidad = $transaccion -> lista($consultasql);
+                $mensualidad = $transaccion -> lista($consultasql);
 
-    date_default_timezone_set("America/Bogota");
-    $fecha_ingreso=date("Y-m-d");
-    $hora_ingreso=date("H:i");
+                date_default_timezone_set("America/Bogota");
+                $fecha_ingreso=date("Y-m-d");
+                $hora_ingreso=date("H:i");
 
-?>
+            ?>
 
             <br>
 
@@ -100,7 +100,8 @@
                                 <p class="card-text">Color: <?php echo ($mensualidades["color"]) ?></p>
                                 <p class="card-text">Slot: <?php echo ($mensualidades["idslot"]) ?></p>
                                 <p class="card-text">Disponible: <?php echo ($mensualidades["disponible"]) ?></p>
-                                <p class="card-text" id="cardnombre">Mensualidad: <?php echo ($mensualidades["contratomensual"]) ?></p>
+                                <p class="card-text" id="cardnombre">Mensualidad:
+                                    <?php echo ($mensualidades["contratomensual"]) ?></p>
                                 <p class="card-text">Hora de ingreso: <?php echo ($mensualidades["horaingreso"]) ?></p>
                                 <p class="card-text">Fecha de ingreso: <?php echo ($mensualidades["fechaingreso"]) ?>
                                 </p>
@@ -140,27 +141,27 @@
                                                 <div class="form-group">
                                                     <label>Nombre: </label>
                                                     <input type="text" class="form-control" name="nombreingreso"
-                                                        value="">
+                                                        value="<?php echo ($mensualidades["nombreConductor"]) ?>">
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label>Placa: </label>
                                                     <input type="text" class="form-control" name="placaingreso"
-                                                        value="">
+                                                        value="<?php echo ($mensualidades["placa"]) ?>">
                                                 </div>
 
 
                                                 <div class="form-group">
                                                     <label>Modelo: </label>
                                                     <input type="text" class="form-control" name="modeloingreso"
-                                                        value="">
+                                                        value="<?php echo ($mensualidades["modelo"]) ?>">
                                                 </div>
 
 
                                                 <div class="form-group">
                                                     <label>Color: </label>
                                                     <input type="text" class="form-control" name="coloringreso"
-                                                        value="">
+                                                        value="<?php echo ($mensualidades["color"]) ?>">
                                                 </div>
 
                                                 <div class="container">
@@ -170,13 +171,15 @@
                                                             <label>Mensualidad: </label>
                                                             <input type="text" class="form-control "
                                                                 name="mensualidadingreso"
-                                                                value="<?php echo ($mensualidades["contratomensual"])?>" readonly>
+                                                                value="<?php echo ($mensualidades["contratomensual"])?>"
+                                                                readonly>
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label>Slot: </label>
                                                             <input type="text" class="form-control" name="slotingreso"
-                                                                value="<?php echo ($mensualidades["idslot"])?>" readonly>
+                                                                value="<?php echo ($mensualidades["idslot"])?>"
+                                                                readonly>
                                                         </div>
 
                                                     </div>
@@ -186,9 +189,10 @@
                                                 <div class="container">
                                                     <div class="row justify-content-around col-mb-6">
 
-                                                        <div class="form-group ">
+
+                                                        <div class="form-group">
                                                             <label>Fecha: </label>
-                                                            <input type="text" class="form-control " name="fechaingreso"
+                                                            <input type="text" class="form-control" name="fechaingreso"
                                                                 value="<?php echo ($fecha_ingreso) ?>">
                                                         </div>
 
@@ -228,13 +232,9 @@
 
 
                                             <script>
-
                                             function limpia(elemento) {
                                                 elemento.value = "";
                                             }
-
-                                            
-
                                             </script>
 
 
@@ -283,31 +283,37 @@
                                                             <label>Mensualidad: </label>
                                                             <input type="text" class="form-control "
                                                                 name="mensaulidadsalida"
-                                                                value="<?php echo ($mensualidades["contratomensual"])?>" readonly>
+                                                                value="<?php echo ($mensualidades["contratomensual"])?>"
+                                                                readonly>
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label>Slot: </label>
-                                                            <input type="text" class="form-control" id= "slotsalida" name="slotsalida"
-                                                                value="<?php echo ($mensualidades["idslot"])?>" readonly>
+                                                            <input type="text" class="form-control" id="slotsalida"
+                                                                name="slotsalida"
+                                                                value="<?php echo ($mensualidades["idslot"])?>"
+                                                                readonly>
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label>Disponible: </label>
-                                                            <input type="text" class="form-control" id= "disponiblesalida" name="disponiblesalida"
-                                                                value="<?php echo ($mensualidades["disponible"])?>" readonly>
+                                                            <input type="text" class="form-control"
+                                                                id="disponiblesalida" name="disponiblesalida"
+                                                                value="<?php echo ($mensualidades["disponible"])?>"
+                                                                readonly>
                                                         </div>
 
                                                     </div>
                                                 </div>
 
+
+
                                                 <div class="container">
                                                     <div class="row justify-content-around col-mb-6">
 
-                                                        <div class="form-group ">
+                                                        <div class="form-group">
                                                             <label>Fecha Ingreso: </label>
-                                                            <input type="text" class="form-control "
-                                                                name="fechaingreso2"
+                                                            <input type="text" class="form-control" name="fechaingreso2"
                                                                 value="<?php echo ($mensualidades["fechaingreso"])?>"
                                                                 onclick="javascript: limpia(this);"
                                                                 onBlur="javascript: verifica(this);">
@@ -346,10 +352,9 @@
                                                     </div>
                                                 </div>
 
-                                                
-                                                <?php
 
-                                                
+                                                <?php
+        
                                                 $horaentradapag = strtotime ($mensualidades["horaingreso"]);
                                                 $horasalidapag = strtotime ($hora_ingreso);
 
@@ -357,20 +362,28 @@
 
                                                 $horas = number_format($totahoras, 1, '.', '');
 
-                                                $totalpago = $horas * 1000; 
                                                 
+                                                if (($mensualidades["contratomensual"]) == 'si')
+                                                {
+                                                    $totalpago = 0;
+                                                }
+                                                else
+                                                {
+                                                    $totalpago = $horas * 1000; 
+                                                }
+
                                                 ?>
 
                                                 <div class="container">
                                                     <div class="row justify-content-around col-mb-6">
 
                                                         <div class="form-group">
-                                                                <label>Valor a pagar: </label>
-                                                                <input type="text" class="form-control" name="valorpago"
-                                                                    value="<?php echo ($totalpago) ?>"
-                                                                    onclick="javascript: limpia(this);"
-                                                                    onBlur="javascript: verifica(this);">
-                                                            </div>
+                                                            <label>Valor a pagar: </label>
+                                                            <input type="text" class="form-control" name="valorpago"
+                                                                value="<?php echo ($totalpago) ?>"
+                                                                onclick="javascript: limpia(this);"
+                                                                onBlur="javascript: verifica(this);">
+                                                        </div>
 
                                                     </div>
                                                 </div>

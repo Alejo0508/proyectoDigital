@@ -27,10 +27,10 @@
     
         $transaccion -> agregaringreso($consultasql);
 
-        echo'<script type="text/javascript">
-    alert("Registro guardado");
-    window.location.href="index.php";
-    </script>';
+            echo'<script type="text/javascript">
+            alert("Registro guardado");
+            window.location.href="index.php";
+            </script>';
 
     }
 
