@@ -21,6 +21,7 @@
 
         $valor = $_POST['valorpago'];
 
+
         $transaccion = new conexionBD(); 
 
         $consultasql = "INSERT INTO pagos (placa, color, modelo, nombreConductor, fechaingreso, horaingreso, fechasalida, horasalida, contratomensual, valor) VALUES ('$placa', '$color', '$modelo', '$nombre', '$fecha' , '$hora', '$fechasalida', '$horasalida', '$mensualidad', '$valor')";

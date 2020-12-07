@@ -46,7 +46,7 @@
             <div class="container  ">
                 <div class="row justify-content-center ">
 
-                    <div class="col-8 justify-content-center ">
+                    <div class="col-10 justify-content-center ">
 
                         <a href="listamensualidad.php" class="btn btn-info mb-2" active" role="button"
                             aria-pressed="true">Listado de mensualidad</a>
@@ -59,6 +59,12 @@
 
                         <a href="historicodepagos.php" class="btn btn-info mb-2" active" role="button"
                             aria-pressed="true">Historico de pagos</a>
+
+                            <button type="button" class="btn btn-success marginbotonregistrar" data-toggle="modal"
+                                    data-target="#registrarmensualidad">
+                                    registro
+                                </button>
+                            
                     </div>
                 </div>
             </div>
@@ -398,6 +404,89 @@
 
                                             </form>
                                             <iframe name="pp" style="position:absolute; top:-1500px;"></iframe>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="modal fade" id="registrarmensualidad" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Registro de mensualidad</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body">
+
+                                            <form
+                                                action="agregaringreso.php" method="POST">
+
+                                                <div class="form-group">
+                                                    <label>Nombre: </label>
+                                                    <input type="text" class="form-control" name="nombreregistro">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Placa: </label>
+                                                    <input type="text" class="form-control" name="placaregistro">
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label>Modelo: </label>
+                                                    <input type="text" class="form-control" name="modeloregistro">
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label>Color: </label>
+                                                    <input type="text" class="form-control" name="colorregistro">
+                                                </div>
+
+                                                <div class="container">
+                                                    <div class="row justify-content-around col-mb-6">
+
+
+                                                        <div class="form-group">
+                                                            <label>Slot: </label>
+                                                            <input type="text" class="form-control" name="slotregistro">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="container">
+                                                    <div class="row justify-content-around col-mb-6">
+
+
+                                                        <div class="form-group">
+                                                            <label>Fecha: </label>
+                                                            <input type="text" class="form-control" name="fechaingresoregistro"
+                                                                value="<?php echo ($fecha_ingreso) ?>">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Hora: </label>
+                                                            <input type="text" class="form-control" name="horaingresoregistro"
+                                                                value="<?php echo ($hora_ingreso) ?>">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <button type="submit" class="btn btn-primary justify-content-center"
+                                                    name="registrar">registrar</button>
+
+                                            </form>
                                         </div>
 
                                     </div>
